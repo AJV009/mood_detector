@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from azure.azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import azure.cosmos.cosmos_client as cosmos_client
@@ -18,7 +18,7 @@ def home():
     return "Hello World"
 
 face_api_endpoint = 'https://facefun.cognitiveservices.azure.com/'
-face_api_key = '816a8b1a3c1040c48b6af0c95dd62d49'
+face_api_key = '09d139cc16634316bb4164546f894db9'
 credentials = CognitiveServicesCredentials(face_api_key)
 face_client = FaceClient(face_api_endpoint, credentials=credentials)
 
@@ -33,6 +33,14 @@ def best_emotion(emotion):
     emotions['sadness'] = emotion.sadness
     emotions['surprise'] = emotion.surprise
     return max(zip(emotions.values(),emotions.key()))[1]
+
+def get_emotions():
+    docs = list(client.ReadItems(cosmos_collection_link))
+    emotions = [doc['emotion'] for doc in docs]
+    counts = dict()
+    for emotion in emotions:
+        counts[emotion] = counts.get(emotion, 0) + 1
+    return jsonify(counts)
 
 @app.route('/image',methods=['POST'])
 def upload_image():

@@ -28,5 +28,6 @@ while True:
         upload(frame)
         break
 
-cv2.destroyAllWindows()
 cam.release()
+cv2.destroyAllWindows()
+

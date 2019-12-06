@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 cosmos_url = 'https://mhl-xaj.documents.azure.com:443/'
 cosmos_primary_key = '4a6VF6JyWFUplVURKKj9BTeyKZgKz1r4ot2u2QLGvVMOaoJWgeaTAGHTWzWJQfsPYucmsaq1B9DcgRY65ZvDnQ=='
-cosmos_collection_link = 'mhl-xaj/workshop/colls/faces'
+cosmos_collection_link = 'dbs/workshop/colls/faces'
 client = cosmos_client.CosmosClient(url_connection=cosmos_url, auth = {'masterKey': cosmos_primary_key})
 
 @app.route('/')

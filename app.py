@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from azure.azure.cognitiveservices.vision.face import FaceClient
+from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import azure.cosmos.cosmos_client as cosmos_client
 import io
@@ -23,7 +23,7 @@ credentials = CognitiveServicesCredentials(face_api_key)
 face_client = FaceClient(face_api_endpoint, credentials=credentials)
 
 def best_emotion(emotion):
-    emotion = {}
+    emotions = {}
     emotions['anger'] = emotion.anger
     emotions['contempt'] = emotion.comtempt
     emotions['disgust'] = emotion.disgust

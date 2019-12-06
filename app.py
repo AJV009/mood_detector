@@ -1,6 +1,7 @@
 from flask import Flask, request
 from azure.azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
+import azure.cosmos.cosmos_client as cosmos_client
 import io
 import uuid
 import base64

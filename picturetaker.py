@@ -6,7 +6,7 @@ import json
 def check_sadness(emotions):
     if 'sadness' in emotions:
         if emotions['sadness'] >= 3:
-            print('Are you feeling okay? Do you want to talk about it?')
+            print("Are you feeling okay? Do you want to talk about it?")
 
 imageUrl = 'https://xaj-pyweb-app.azurewebsites.net/image'
 

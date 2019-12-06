@@ -54,4 +54,4 @@ def upload_image():
             'emotion':best_emotion(face.face_attributes.emotion)
         }
         client.CreateItem(cosmos_collection_link,doc)
-    return 'OK'
+    return get_emotions()

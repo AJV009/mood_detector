@@ -21,5 +21,5 @@ while True:
         upload(frame)
         break
 
-cam.release()
 cv2.destroyAllWindows()
+cam.release()

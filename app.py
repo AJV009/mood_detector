@@ -25,7 +25,7 @@ face_client = FaceClient(face_api_endpoint, credentials=credentials)
 def best_emotion(emotion):
     emotions = {}
     emotions['anger'] = emotion.anger
-    emotions['comtempt'] = emotion.comtempt
+    emotions['contempt'] = emotion.contempt
     emotions['disgust'] = emotion.disgust
     emotions['fear'] = emotion.fear
     emotions['happiness'] = emotion.happiness

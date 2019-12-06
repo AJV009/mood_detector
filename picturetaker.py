@@ -1,6 +1,12 @@
 import cv2
 import requests
 import base64
+import json
+
+def check_sadness(emotions):
+    if 'sadness' in emotions:
+        if emotions['sadness'] >= 3:
+            print('Are you feeling okay? Do you want to talk about it?')
 
 imageUrl = 'https://xaj-pyweb-app.azurewebsites.net/image'
 
@@ -8,7 +14,8 @@ def upload(frame):
     data = {}
     img = cv2.imencode('.jpg',frame)[1]
     data['image'] = base64.b64encode(img).decode()
-    requests.post(url=imageUrl, json=data)
+    results = requests.post(url=imageUrl, json=data)
+    check_sadness(results.json())
 
 cam = cv2.VideoCapture(0)
 cv2.namedWindow('Press space to take images!')

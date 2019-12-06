@@ -4,6 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return "Hello World"
+@app.route('/image',methods=['POST'])
 def upload_image():
     json = request.get_json()
     base64_image = base64.b64decode(json['image'])

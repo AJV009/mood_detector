@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Python27\\python.exe",
+    "python.pythonPath": "C:\\ProgramData\\Miniconda3\\python.exe",
     "appService.zipIgnorePattern": [
         "__pycache__{,/**}",
         "*.py[cod]",

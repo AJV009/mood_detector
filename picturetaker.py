@@ -15,7 +15,7 @@ def upload(frame):
     img = cv2.imencode('.jpg',frame)[1]
     data['image'] = base64.b64encode(img).decode()
     results = requests.post(url=imageUrl, json=data)
-    print(results.json())
+    print(results.text())
 
 cam = cv2.VideoCapture(0)
 cv2.namedWindow('Press space to take images!')

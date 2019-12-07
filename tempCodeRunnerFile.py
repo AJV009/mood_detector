@@ -1,0 +1,1 @@
+results = requests.post(url=imageUrl, json=data)

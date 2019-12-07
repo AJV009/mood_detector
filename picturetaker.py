@@ -12,10 +12,10 @@ imageUrl = 'https://xaj-pyweb-app.azurewebsites.net/image'
 
 def upload(frame):
     data = {}
-    img = cv2.imencode('.jpg', frame)[1]
+    img = cv2.imencode('.jpg',frame)[1]
     data['image'] = base64.b64encode(img).decode()
     results = requests.post(url=imageUrl, json=data)
-    check_sadness(results.json())
+    print(results.json())
 
 cam = cv2.VideoCapture(0)
 cv2.namedWindow('Press space to take images!')

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import azure.cosmos.cosmos_client as cosmos_client
@@ -15,7 +15,8 @@ client = cosmos_client.CosmosClient(url_connection=cosmos_url, auth = {'masterKe
 
 @app.route('/')
 def home():
-    return "Hello World"
+  docs = list(client.ReadItems(cosmos_collection_link))
+  return render_template('home.html', result = docs)
 
 face_api_endpoint = 'https://facefun.cognitiveservices.azure.com/'
 face_api_key = '09d139cc16634316bb4164546f894db9'

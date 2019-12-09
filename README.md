@@ -4,9 +4,7 @@ Learning to use Azure Cloud Cognitive services and GitHub integration.
 
 A Mood Detector (Partial web app) - Captures your face then detects the moods like Happy or Sad!
 
-Makes use of Azure Cognitive Services -> Face API
-Cosmos DB
-Azure App Services on VS Code
+Makes use of Azure Cognitive Services (Face API), Cosmos DB and Azure App Services on VS Code
 
 Made from - https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-mood-detector
 

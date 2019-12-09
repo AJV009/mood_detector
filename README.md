@@ -14,3 +14,6 @@ I used a conda environment with python 3.7 for the project. Something crashed in
 - Simply install the requirements.txt and run the picturetaker.py!
 - It would take a picture by pressing the spacebar
 - Automatically uploads to web page (app.py) which would interact with the Face API -> https://xaj-pyweb-app.azurewebsites.net/
+
+
+An Update : My services is down so you may have to build your own services and API keys! Am trying to fix this issue!

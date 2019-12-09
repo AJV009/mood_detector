@@ -17,3 +17,4 @@ I used a conda environment with python 3.7 for the project. Something crashed in
 
 
 An Update : My services is down so you may have to build your own services and API keys! Am trying to fix this issue!
+Fixed it I have to redeploy it a couple of times so better you do with your own account!
